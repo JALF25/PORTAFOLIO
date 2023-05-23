@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+        h1{
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            font-family: 'Rubik Vinyl', cursive;
+        }
+
+        /*generales*/
+        
+        header {
+            text-align: center;
+        }
+        header p{
+            margin:10px 200px;
+        }
+        /*clases*/
+        
+        .titulo{
+            transition: 1s;
+        }
+        .titulo:hover{
+            background-color:#4a0bbea6;
+            border-radius: 1rem;
+            transform: translate(-5px,10px);
+            color: #fff
+        }
+        .palabra-nombre>h2,
+        .palabra-descr>p {
+            text-transform: capitalize;
+        }
+
+        .palabras {
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+            gap: 1.5rem;
+        }
+
+        .palabra {
+            align-self: center;
+            justify-self: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            border: 1px solid #ccc;
+            transition:.5s;
+        }
+
+        .palabra-descr,.palabra-nombre,.palabra-nombre{
+            align-self: center;
+            justify-self: center;
+        }
+
+        .palabra-descr {
+            word-wrap: break-word;
+        }
+        h1:hover,.intro p:hover,
+        .palabra-descr:hover p, 
+        .palabra-nombre:hover h2{
+            transition:.5s;
+            color: #fff;
+        }
+        .palabra-img {
+            justify-items: center;
+            width: 80%;
+            height: 80%;
+        }
+
+        .palabra-img img {
+            transition: .5s;
+            border: 3px solid black;
+            padding: 1px;
+            text-align: center;
+            width: 80%;
+            aspect-ratio: 3/2;
+            object-fit: fill;
+            opacity: 75%;
+        }
+        .palabra:hover{
+            background-color: #a17fe0 ;
+            border: none;
+            border-radius: 10px;
+            margin-top: 10px;
+            transform:translateY(-20px);
+        }
+        img:hover{
+            transform: scale(1.3) rotate(5deg);
+            border-radius: 10px;
+            border: none;
+            opacity: 100%;
+            outline: 3px solid #3c079e;
+            filter: drop-shadow(0 0 25px #272727);
+        }
+        .palabra-descr{
+            width: 500px;
+            text-align: center;
+        }
+        /*footer*/
+        footer {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /*boton*/
+        button {
+            font-weight: bold;
+            transition:.8s;
+            height: 35px;
+        }
+
+        button:hover {
+            color: #fff;
+            background-color: #59C173;
+            filter: drop-shadow(5px 10px 50px #141414);
+        }
+
+        /*Media query*/
+        @media(max-width:700px) {
+            .intro p{
+                margin:0;
+            }
+            .palabra-nombre>h2,
+            p {
+                margin-top: 0;
+            }
+            .palabras{
+                display: flex;
+                overflow-x: scroll;
+                scroll-behavior: smooth;
+                scroll-snap-type: x mandatory;
+                height: max-content;
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+            .palabra-descr{
+                padding:0 2rem;
+            }
+
+            .palabra{
+                flex: 0 0 100%; /* Ocupa el ancho completo del contenedor */
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                scroll-snap-align: center;
+                text-align: center;
+                transition: transform 0.5s ease-in-out;
+            }
+            .palabra-descr,
+            .palabra-nombre,
+            .palabra-img {
+                justify-content: center;
+            }
+
+            .palabra-img>img {
+                width: 50%;
+                aspect-ratio: 3/2;
+            }
+
+            .palabra-img {
+                text-align: center;
+                margin: auto;
+                width: 60%;
+                height: 60%;
+            }
+
+            img:hover {
+                transform: scale(1.1);
+                border-radius: 50px;
+            }
+
+            @media(max-width:300px) {
+                p {
+                    line-height: 21px;
+                    height: calc(3*21px);
+                    overflow: hidden;
+                    position: relative;
+                }
+
+                p::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    height: 21px;
+                    width: 75%;
+                    background: linear-gradient(40deg, transparent, white)
+                }
+            }
+        }
+    </style>
+    <header>
+        <div class="titulo">
+            <h1>Letra S</h1>
+        </div>
+        <div class="intro">
+            <p>La s (en mayúscula S, nombre ese, plural eses) es la vigésima letra y la decimosexta consonante del alfabeto
+                español, y la decimonovena letra del alfabeto latino básico.
+    
+                En español se le representa un sonido consonante obstruyente, fricativo, alveolar (en las zonas donde existe
+                el fonema /θ/) o dental-alveolar (en las zonas donde no existe el fonema /θ/) y sordo.</p>
+        </div>
+    
+    </header>
+    <main>
+        <section class="palabras">
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> Sandia</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>Citrullus lanatus, comúnmente llamada melón de agua, sandía, acendría, sindria, patilla, es una
+                        especie de la familia Cucurbitaceae. Es originaria de África con una gran presencia y difusión en
+                        todo el mundo. Se cultiva de manera extendida por todo el mundo debido a su fruto, el cuál es un
+                        pepónide de enorme tamaño.</p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/s1.webp" alt="img-sandia" loading="lazy">
+                </div>
+            </div>
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> Soldado</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>Un soldado, en su sentido más general, es un individuo que se ha alistado voluntariamente o en
+                        cumplimiento de un servicio militar obligatorio, en las fuerzas armadas de un país soberano, o
+                        institución militar recibiendo entrenamiento y equipo para defender a dicho país y sus intereses.
+                    </p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/s2.webp" alt="img-soldado" loading="lazy">
+                </div>
+            </div>
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> Sofa</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>Un sofá es un asiento cómodo para dos o más personas que cuenta con respaldo y posabrazos.
+                    </p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/m3.webp" alt="img-sofa" loading="lazy">
+                </div>
+            </div>
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> Sol</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>El Sol (del latín sol, solis, ‘dios Sol invictus’ o ‘sol’, a su vez de la raíz protoindoeuropea
+                        sauel-, ‘luz’)​ es una estrella de tipo-G de la secuencia principal y clase de luminosidad V que se
+                        encuentra en el centro del sistema solar y constituye la mayor fuente de radiación electromagnética
+                        de este sistema planetario.</p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/s4.webp" alt="img-sol" loading="lazy">
+                </div>
+            </div>
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> Sal</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>La sal común o sal de mesa, conocida popularmente como sal, es un tipo de sal denominada cloruro
+                        sódico (o cloruro de sodio), cuya fórmula química es NaCl. </p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/s5.webp" alt="img-sal" loading="lazy">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="home.html">
+            <button>Regresar</button>
+        </a>
+    </footer>
+
+</body>
+
+</html>

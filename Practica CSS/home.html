@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');/*@import para importar
+        directamente al css*/
+        h1{
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Noto+Sans+JP:wght@100&display=swap');
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background:#FFD194 ;
+            font-family: 'Darumadrop One', cursive;
+            text-transform: capitalize;
+        }
+        /*generales*/
+        header{
+            text-align: center;
+        }
+        header p{
+            margin:10px 200px;
+        }
+        .titulo{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            transition: 1s;
+        }
+        .titulo:hover{
+            background-color:#a76105 ;
+            border-radius: 1rem;
+            transform: translate(-5px,10px);
+            color: #fff
+        }
+        h1:hover,.intro:hover>p{
+            color: #c42127;
+        }
+        .titu-img{
+            align-self:center ;
+            height:200px;
+            width: 200px;
+        }
+        .pags{
+            margin:0 100px;
+            display:grid;
+            grid-template-columns: repeat(5,1fr);
+            gap:1px;
+        }
+        .letra{
+            border:1px solid #000;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        a{
+            transition: .5s;
+            text-decoration: none;
+            color:#000;
+            width: 100%;
+        }
+        .link:hover{
+            background-color:#D1913C;
+            font-weight: bold;
+            transform: scale(1.1);
+            transform:translateY(-2.5px);
+            color:#fff;
+        }
+        .link:hover>a{
+            color:#fff;
+        }
+        .link:hover>a:active{
+            color:#c42127;
+        }
+        @media (min-width:300px){
+            .letra:last-child{
+                grid-column: 3/4;
+            }
+        }
+        @media (max-width:550px){
+            .pags{
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+        @media(max-width:600px){
+            .pags{
+                grid-template-columns: repeat(2,1fr);
+            }
+            .intro p{
+                margin:0;
+            }
+        }
+    </style>
+    <header>
+        <div class="titulo">
+            <div class="titu-img">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
+                    className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round"
+                        d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                </svg>
+            </div>
+            <h1>Diccionario.com</h1>
+        </div> 
+        <div class="intro">
+            <p>Esto es nuestro diccionario, con las primeras palabras que se nos ocurrieron con las primeras letras que se nos
+                ocurrieron. Espero les guste</p>
+        </div>
+    </header>
+    <main>
+        <section class="pags">
+            <div class="letra link"><a href="pag1.html">a</a></div>
+            <div class="letra">b</div>
+            <div class="letra">c</div>
+            <div class="letra">d</div>
+            <div class="letra">e</div>
+            <div class="letra">f</div>
+            <div class="letra link"><a href="pag2.html">g</a></div>
+            <div class="letra">h</div>
+            <div class="letra">i</div>
+            <div class="letra">j</div>
+            <div class="letra">k</div>
+            <div class="letra">l</div>
+            <div class="letra link"><a href="pag3.html">m</a></div>
+            <div class="letra">n</div>
+            <div class="letra">o</div>
+            <div class="letra">p</div>
+            <div class="letra">q</div>
+            <div class="letra">r</div>
+            <div class="letra link"><a href="pag4.html">s</a></div>
+            <div class="letra">t</div>
+            <div class="letra">u</div>
+            <div class="letra">v</div>
+            <div class="letra">w</div>
+            <div class="letra">x</div>
+            <div class="letra link"><a href="pag5.html">y</a></div>
+            <div class="letra">z</div>
+        </section>
+    </main>
+    <footer>
+        <div class="presentacion">
+            <h3>taller practico css</h3>
+        </div>
+    </footer>
+</body>
+</html>

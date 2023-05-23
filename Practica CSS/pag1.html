@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+        h1{
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&display=swap');
+
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(to right, #f4791f, #659999); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            font-family: 'Konkhmer Sleokchher', cursive;
+        }
+        /*Para aplicarle al fondo un degradado de colores*/
+        /*generales*/
+        header{
+            text-align: center;
+        }
+        header p{
+            margin:10px 200px;
+        }
+        .titulo{
+            transition: 1s;
+        }
+        .titulo:hover{
+            background-color:#bd570edc ;
+            border-radius: 1rem;
+            transform: translate(-5px,10px);
+            color: #fff;
+        }
+        /*clases*/
+        .palabra-nombre>h2,.palabra-descr>p{
+            text-transform: capitalize;
+        }
+        .palabras {
+            display: grid;
+            grid-template-rows: repeat(5,1fr);
+            gap: 1.5rem;
+        }
+        /*al div que contrendra todas las palabras se le da un display grid con 5 filas y una separacion*/
+        .palabra {
+            align-self: center;
+            justify-self: center;
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            justify-items: center;
+            border: 1px solid #ccc;
+            transition:.5s;
+        }
+        /*en el div de cada palabra se hace otro grid para dividirlo en 3 columnas*/
+        .palabra-descr,.palabra-nombre,.palabra-nombre{
+            align-self: center;
+            justify-self: center;
+        }
+        /*se centran los contenidos de los div*/
+        .palabra-descr{
+            word-wrap: break-word; 
+        }
+        /*para que los parrafos se ajusten al tamaño*/
+        h1:hover,
+        .intro p:hover,
+        .palabra-descr:hover p, 
+        .palabra-nombre:hover h2{
+            transition:.5s;
+            color: #fff;
+        }/*se hace que cuando se este sobre el titulo de la pag y su intro estan tomen un color blanco*/
+        .palabra-img{
+            justify-items:center;
+            width: 80%;
+            height: 80%;
+        }
+        .palabra-img img{
+            transition: .5s;
+            border:3px solid black;
+            padding: 1px;
+            text-align: center;
+            width:80%;
+            aspect-ratio: 3/2;
+            object-fit:fill;
+            opacity: 75%;
+        } /*se establecen los formatos para las imagenes*/
+        
+        .palabra:hover{
+            background-color: #1c9494;
+            border: none;
+            border-radius: 10px;
+            margin-top: 10px;
+            transform:translateY(-20px);
+        }/*cuando se esta sobre el div de cada palabra cambiara el fondo y eso*/
+        img:hover{
+            transform: scale(1.3) rotate(5deg);
+            border-radius: 12px 50px;
+            border: none;
+            opacity: 100%;
+            outline: 3px solid #f4791f;
+            filter: drop-shadow(-50px 0 25px #272727);
+        }/*Se aplican unas trasicio es a las imagenes cuando se esta sobre ellas*/
+        /*footer*/
+        footer{
+            margin-top: 10px;
+            text-align: center;
+        }
+        /*boton*/
+        button{
+            font-weight: bold;
+            transition:.8s;
+            height: 35px;
+        }
+        .palabra-descr{
+            width: 500px;
+            text-align: center;
+        }
+        button:hover{
+            color: #fff;
+            background-color:#659999;
+            filter: drop-shadow(5px 10px 50px #141414);
+        }
+        /*Media query para que sea responsive*/
+        @media(max-width:700px){
+            .palabra-nombre>h2,p{
+                margin-top: 0;
+            }
+            .intro p{
+                margin:0;
+            }
+            .palabras{
+                display: flex;
+                overflow-x: scroll;
+                scroll-behavior: smooth;
+                scroll-snap-type: x mandatory;
+                height: max-content;
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+            .palabra-descr{
+                padding:0 2rem;
+            }
+
+            .palabra{
+                flex: 0 0 100%; /* Ocupa el ancho completo del contenedor */
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                scroll-snap-align: center;
+                text-align: center;
+                transition: transform 0.5s ease-in-out;
+            }
+            .palabra-descr,.palabra-nombre,.palabra-img{
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+            }
+
+            .palabra-descr p{
+                line-height: 21px;
+                height: calc(3*21px);
+                overflow: hidden;
+                position: relative;
+            }
+            .palabra-img>img{
+                width: 80%;
+                aspect-ratio: 3/2;
+            }
+            .palabra-img{
+                text-align: center;
+                margin: auto;
+                width: 90%;
+                height: 90%;
+            }
+            img:hover{
+                transform: scale(1.2);
+                border-radius: 25px;
+                margin-top: 20px;
+            }
+    }
+        @media(max-width:300px){
+            p{
+                line-height: 21px;
+                height: calc(3*21px);
+                overflow: hidden;
+                position: relative;
+            }
+            p::after{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                height:21px;
+                width: 75%;
+                background:linear-gradient(40deg,transparent,white)
+            }
+        }
+    </style>
+    <header>
+        <div class="titulo">
+            <h1>Letra A</h1>
+        </div>
+        <div class="intro">
+            <p>La a (en mayúscula A, nombre a, plural aes) es la primera letra del alfabeto latino básico, y de los alfabetos
+                derivados del mismo. En el Alfabeto Fonético Internacional representa la vocal abierta central no redondeada /ä/. En
+                la ortografía de numerosas lenguas de escritura latina, tiene ese mismo valor</p>
+        </div>
+
+    </header>
+    <main>  
+        <section class="palabras">
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> árbol</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>es una planta, de tallo leñoso, que se ramifica a cierta altura del suelo.</p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/a1.webp" alt="img-arbol" loading="lazy">
+                </div>
+            </div>
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> araña</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>son un conjunto de animales artrópodos muy abundante en todo el mundo y del que se conocen aproximadamente unas 45.000
+                    especies diferentes.</p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/a2.webp" alt="img-arbol" loading="lazy">
+                </div>
+            </div>
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> aguacate</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>Persea americana, llamado popularmente aguacate, palto o aguacatero, es una especie arbórea del género Persea
+                    perteneciente a la familia Lauraceae, cuyo fruto, el aguacate o palta, es una baya comestible.</p>
+                </div>
+                <div class="palabra-img" >
+                    <img src="img/a3.webp" alt="img-arbol" loading="lazy">
+                </div>
+            </div>
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> automóvil</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>es un vehículo motorizado con ruedas utilizado para el transporte.</p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/a4.webp" alt="img-arbol" loading="lazy">
+                </div>
+            </div>
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> analogo</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>La tecnología analógica se refiere a la tecnología que utiliza señales analógicas para representar información. En
+                    contraste, la tecnología digital utiliza señales digitales que representan información de manera discreta, utilizando
+                    códigos binarios (1 y 0).</p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/a5.webp" alt="img-arbol" loading="lazy">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="home.html">
+            <button>Regresar</button>
+        </a>
+    </footer>
+
+</body>
+
+</html>

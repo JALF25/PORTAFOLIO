@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+        h1{
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            font-family: 'Shojumaru', cursive;
+        }
+
+        /*generales*/
+        header {
+            text-align: center;
+        }
+        header p{
+            margin:10px 200px;
+        }
+        /*clases*/
+        
+        .titulo{
+            transition: 1s;
+        }
+        .titulo:hover{
+            background-color:#cadb09a1;
+            border-radius: 1rem;
+            transform: translate(-5px,10px);
+            color: #fff
+        }
+        h1:hover,.intro p:hover,
+        .palabra-descr:hover p, 
+        .palabra-nombre:hover h2{
+            transition:.5s;
+            color: #fff;
+        }
+        .palabra-nombre>h2,
+        .palabra-descr>p {
+            text-transform: capitalize;
+        }
+
+        .palabras {
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+            gap: 1.5rem;
+        }
+
+        .palabra {
+            align-self: center;
+            justify-self: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            border: 1px solid #ccc;
+            transition:.5s;
+        }
+        .palabra-descr,.palabra-nombre,.palabra-nombre{
+            align-self: center;
+            justify-self: center;
+        }
+        .palabra-descr {
+            word-wrap: break-word;
+        }
+
+        .palabra-img {
+            justify-items: center;
+            width: 80%;
+            height: 80%;
+        }
+
+        .palabra-img img {
+            transition: .5s;
+            border: 3px solid black;
+            padding: 1px;
+            text-align: center;
+            width: 80%;
+            aspect-ratio: 3/2;
+            object-fit: fill;
+            opacity: 75%;
+        }
+        .palabra:hover{
+            background-color: #43C6AC;
+            border: none;
+            border-radius: 10px;
+            margin-top: 10px;
+            transform:translateY(-20px);
+        }
+        .palabra-descr{
+            width: 500px;
+            text-align: center;
+        }
+        img:hover{
+            transform: scale(1.3) rotate(5deg);
+            border-radius: 10px;
+            border: none;
+            opacity: 100%;
+            outline: 3px solid #F8FFAE;
+            filter: drop-shadow(0 0 25px #272727);
+        }
+
+        /*footer*/
+        footer {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /*boton*/
+        button {
+            font-weight: bold;
+            transition:.8s;
+            height: 35px;
+        }
+
+        button:hover {
+            color: #fff;
+            background-color: #778109;
+            filter: drop-shadow(5px 10px 50px #141414);
+        }
+
+        /*Media query*/
+        @media(max-width:700px) {
+            .intro p{
+                margin:0;
+            }
+            .palabra-nombre>h2,
+            p {
+                margin-top: 0;
+            }
+            .palabras{
+                display: flex;
+                overflow-x: scroll;
+                scroll-behavior: smooth;
+                scroll-snap-type: x mandatory;
+                height: max-content;
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+            .palabra-descr{
+                padding:0 2rem;
+            }
+
+            .palabra{
+                flex: 0 0 100%; /* Ocupa el ancho completo del contenedor */
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                scroll-snap-align: center;
+                text-align: center;
+                transition: transform 0.5s ease-in-out;
+            }
+            .palabra-descr,
+            .palabra-nombre,
+            .palabra-img {
+                justify-content: center;
+            }
+
+            .palabra-img>img {
+                width: 50%;
+                aspect-ratio: 3/2;
+            }
+
+            .palabra-img {
+                text-align: center;
+                margin: auto;
+                width: 60%;
+                height: 60%;
+            }
+
+            img:hover {
+                transform: scale(1.1);
+                border-radius: 50px;
+            }
+
+            @media(max-width:300px) {
+                p {
+                    line-height: 21px;
+                    height: calc(3*21px);
+                    overflow: hidden;
+                    position: relative;
+                }
+
+                p::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    height: 21px;
+                    width: 75%;
+                    background: linear-gradient(40deg, transparent, white)
+                }
+            }
+        }
+    </style>
+    <header>
+        <div class="titulo">
+            <h1>Letra Y</h1>
+        </div>
+        <div class="intro">
+            <p>La y (en mayúscula Y, nombre i griega o ye, plural yes)​ es la vigesimosexta letra del alfabeto español, y la
+                vigesimoquinta del alfabeto latino básico. Sus nombres son: ye; en plural yes, o bien i griega. La
+                Ortografía de la lengua española (2010), publicada por la Real Academia Española, propone ye como nombre
+                recomendado para esta letra</p>
+        </div>
+    
+    </header>
+    <main>
+        <section class="palabras">
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> Yuca</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>Manihot esculenta, llamado comúnmente yuca, mandioca, aipim, guacamota, casabe, casava o lumu es un
+                        arbusto perenne de la familia de las euforbiáceas extensamente cultivado en América, África y
+                        Oceanía por sus raíces con almidones de alto valor alimentario.</p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/y1.webp" alt="img-yuca" loading="lazy">
+                </div>
+            </div>
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> Yogurt</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>El yogur, —también conocido como helado, tabloides, ronaldo, yoghurt, yogurth o yagurt - es un
+                        producto lácteo obtenido mediante la fermentación de la leche​ por medio de bacterias de los géneros
+                        Lactobacillus y Streptococcus. </p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/y2.webp" alt="img-yogurt" loading="lazy">
+                </div>
+            </div>
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> Yelmo</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>Se llama yelmo, palabra de origen germánico helm, al elemento de la armadura que protege la cabeza y
+                        el rostro del guerrero. Tuvo su momento cumbre en la Baja Edad Media cuando llegaron a ser piezas
+                        importantes de la armadura medieval, posteriormente se siguieron utilizando en desfiles, paradas
+                        militares y torneos deportivos en pos de seguridad.
+                    </p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/y3.webp" alt="img-yelmo" loading="lazy">
+                </div>
+            </div>
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> Yegua</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>Mamífero équido, hembra, de tamaño mediano o grande, pelo corto de color generalmente uniforme y
+                        orejas cortas; se domestica con facilidad y suele usarse para la monta; hay muchas especies
+                        diferentes.</p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/y4.webp" alt="img-yegua" loading="lazy">
+                </div>
+            </div>
+            <div class="palabra">
+                <div class="palabra-nombre">
+                    <h2> Yak</h2>
+                </div>
+                <div class="palabra-descr">
+                    <p>El yak​ (Bos mutus o Bos grunniens) es un mamífero bóvido de tamaño mediano y pelaje lanoso, nativo
+                        de las montañas de Asia Central y el Himalaya, vive en las altiplanicies esteparias y fríos
+                        desiertos del Nepal, Tíbet, Pamir y Karakórum, entre los 4000 y 6000 metros de altitud, donde se
+                        encuentra tanto en estado salvaje como doméstico.</p>
+                </div>
+                <div class="palabra-img">
+                    <img src="img/y5.webp" alt="img-yak" loading="lazy">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="home.html">
+            <button>Regresar</button>
+        </a>
+    
+    </footer>
+</body>
+
+</html>
