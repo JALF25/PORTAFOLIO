@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="img/White_Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="b_log_reg">
+    <main class="log_reg">
+        <div class="form_img">
+            <div class="img">
+                <img src="img/logo-Name.png" alt="logo" height="100px" width="300px">
+            </div>
+            <div class="form_cop">
+                <p>Copyright © 2023 [SoloCiencia]. Todos los derechos reservados.</p>
+            </div>
+            <div class="term_c">
+                <div class="term">
+                    <p>términos y condiciones</p>
+                </div>
+                <div class="linea-vertical_m"></div>
+                <div class="term">
+                    <p>políticas de privacidad</p>
+                </div>
+            </div>
+        </div>
+        <div class="form_log_reg">
+            <div class="enca_log_reg2">
+                <h1>bienvenido!</h1>
+            </div>
+            <form class="formulario_log_reg" action="reg.jsp">
+                <div class="campo_log_reg">
+                    <input class="campo_input_log_reg" type="text" name="nombre" required placeholder=" ">
+                    <label class="campo_label_log_reg" for="">nombre</label>
+
+                </div>
+                <div class="campo_log_reg">
+                    <input class="campo_input_log_reg" type="text" name="apellido" required placeholder=" ">
+                    <label class="campo_label_log_reg" for="">apellido</label>
+
+                </div>
+                <div class="campo_log_reg">
+                    <input class="campo_input_log_reg" type="number" name="edad" required placeholder=" ">
+                    <label class="campo_label_log_reg" for="">edad</label>
+
+                </div>
+
+                <div class="campo_log_reg">
+                    <input class="campo_input_log_reg contra" type="password" name="contra" required placeholder=" "
+                        pattern="^(?=.[ a-z])(?=.[ A-Z])(?=.[! @#$%^&()_+-=[]{};':\|,.<>/?]). {8,}$"
+                        title="Debe cumplir todas las condiciones">
+                    <label class="campo_label_log_reg" for="contra">contraseña</label>
+                    <div class="valid">
+                        <ul class="validar">
+                            <li class="validar_campo mayu">mayúscula</li>
+                            <li class="validar_campo minu">minuscula</li>
+                            <li class="validar_campo cantidad">mínimo 8 caracteres</li>
+                            <li class="validar_campo especial">caracter especial</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="boton_log_reg pointer">registrar</button>
+            </form>
+            <div class="otro">
+                <h4>tienes cuenta?</h4>
+                <a href="log.html">inicia sesión</a>
+            </div>
+        </div>
+    </main>
+    <script src="scr.js"></script>
+</body>
+
+</html>

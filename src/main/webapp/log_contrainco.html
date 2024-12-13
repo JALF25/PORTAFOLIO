@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="icon" href="img/White_Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="b_log_reg">
+    <main class="log_reg">
+        <div class="form_img">
+            <div class="img">
+                <img src="img/logo-Name.png" alt="logo" height="100px" width="300px">
+            </div>
+            <div class="form_cop">
+                <p>Copyright © 2023 [SoloCiencia]. Todos los derechos reservados.</p>
+            </div>
+            <div class="term_c">
+                <div class="term">
+                    <p>términos y condiciones</p>
+                </div>
+                <div class="linea-vertical_m"></div>
+                <div class="term">
+                    <p>políticas de privacidad</p>
+                </div>
+            </div>
+        </div>
+        <div class="form_log_reg">
+            <div class="enca_log_reg">
+                <h1  class="jode">bienvenido de vuelta!</h1>
+            </div>
+            <form class="formulario_log_reg" action="log.jsp">
+                <div class="campo_log_reg">
+                    <input class="campo_input_log_reg" type="text" name="nombre" required placeholder=" ">
+                    <label class="campo_label_log_reg" for="">nombre</label>
+                </div>
+                <div class="campo_log_reg">
+                    <input class="campo_input_log_reg" type="password" name="contra" required placeholder=" ">
+                    <label class="campo_label_log_reg" for="">contraseña</label>
+                    <div>
+                        <p class="inco">contraseña incorrecta</p>
+                    </div>
+                </div>
+                <button class="boton_log_reg">iniciar sesión</button>
+            </form>
+            <div class="otro">
+                <h4>no tienes cuenta?</h4>
+                <a href="reg.html">regístrate</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
